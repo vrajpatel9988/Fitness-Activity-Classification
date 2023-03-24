@@ -1,0 +1,29 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="Analyze my workout">
+    <meta name="author" content="Tomasz Bartkowiak">
+    <link rel="icon" href"../static/images/logo.png">
+
+    <title>Analyze my workout! - Data collection</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="https://getbootstrap.com/docs/4.0/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom styles for this template -->
+    <link href="../static/styles.css" rel="stylesheet">
+  </head>
+
+  <body class="text-center">
+    <form action = {{ ip_local }} method = "POST">
+      <img class="mb-4" src="../static/images/logo.png" alt="" width="100" height="100">
+      <p class="vertical-space">Select activity to perform</p>
+      {% for activity in activities %}
+      <button class="btn btn-sm btn-dark btn-block" name="activity" type="submit" value= {{ activity }}>{{ activity }}</button>
+      {% endfor %}
+      <p class="mt-5 mb-3 text-muted">&copy; 2017-2018 Tomasz Bartkowiak</p>
+    </form>
+  </body>
+</html>
